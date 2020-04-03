@@ -1,16 +1,17 @@
 from Event import Event, EventMode
-from onEnable import OnEnable
-
-print("example!!")
-aa = " c"
+from onEnable import OnEnable, OnDisable
 
 
-@Event("PlayerFightEvent", EventMode.NormalHookMode)
-def exevent(obj):
-    print("aaaaaaaaaaaaaaaa")
+@Event("PlayerMoveEvent", EventMode.NormalHookMode)
+def event(obj):
+    print(obj.getPlayer)
 
 
 @OnEnable()
-def test():
-    print("Example Plugins load2!")
-# exec("event.append(exevent)")
+def onEnable():
+    print("Example plugin load!")
+
+
+@OnDisable()
+def onDisable():
+    print("Example plugin unload!")
