@@ -11,16 +11,16 @@ def onEvent(obj):
 
 @OnEnable()
 def starting():
-    print("Example Plugins load!")
+    server.getLogger().info("Example Plugins load!")
 
 @OnDisable()
 def unloading():
-    print("Example Plugins unload!")
+    server.getLogger().info("Example Plugins unload!")
 
 @Command("test")
 def cmd(args, player):
-    print(args)
-    print(player)
+    server.getLogger().info(str(args))
+    server.getLogger().info(str(player))
 
 def getServer(server_):
     global server
